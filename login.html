@@ -6,109 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="slyle.css">
     <title>Log In</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 </head>
 <body>
     <section class="login">
         <div class="login__title">
             <span>Log in</span>
         </div>
-        <form id="login-Form" class="login__form" action="">
+        <form class="login__form" id="login-form">
             <div class="login__content">
-                <input id="login-username" type="text" class="login__email" name="email" placeholder="username">
+                <input type="email" class="login__email" name="email" id="email" placeholder="Email address">
             </div>
             <div class="login__content">
-                <input id="login-password" type="password" class="login__password" name="password" placeholder="Password">
+                <input type="password" class="login__password" name="password" id="password" placeholder="Password">
             </div>
             <div class="login__content">
-                <input id="customSwitch" type="checkbox" class="login__check" name="keep_logged">
+                <input type="checkbox" class="login__check" name="keep_logged">
                 <span>Keep me logged in</span>
             </div>
             <div class="login__content">
-                <input id="loginbtn" type="submit" class="login__btn" value="log in">
-            </div>
-            <div class="register-link m-t-10 text-center">
-                <p>Don't have account ? <a href="signUp.html"> Sign Up Here</a></p>
-            </div>
-            <div class="back_home">
-                <a href="index.html"> Back</a></p>
+                <input type="submit" class="login__btn" value="log in">
             </div>
         </form>
     </section>
-
-    <script type="module">
-      
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-       
-        const firebaseConfig = {
-          apiKey: "AIzaSyD6R3fMO7O-uedQ-jlBe9OjMCwhmixho30",
-          authDomain: "my-brand-project-63995.firebaseapp.com",
-          databaseURL: "https://my-brand-project-63995-default-rtdb.firebaseio.com",
-          projectId: "my-brand-project-63995",
-          storageBucket: "my-brand-project-63995.appspot.com",
-          messagingSenderId: "345228383712",
-          appId: "1:345228383712:web:764334a990287bc537c785"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-  
-        import { getDatabase,ref ,set , child, get} 
-          from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
-  
-          const db = getDatabase();
-  
-        const username = document.getElementById('login-username');
-        const password = document.getElementById('login-password');
-  
-  
-        const loginForm = document.querySelector('#login-Form');
-        loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const debRef = ref(db);
-
-        
-
-        get(child(debRef, "UserList/"+ username.value)).then((snapshot)=>{
-          if(snapshot.exists()){
-                let dbpass = decPass(snapshot.val().password);
-                if(dbpass == password.value){
-                    login();
-                }
-                else{
-                    alert("UserName or ");
-                }
-          }
-          
-          else{
-              alert("UserName or password is incorect");
-                 }
-        })
-            
-
-            function decPass(dbpass){
-        var pass12 =  CryptoJS.AES.decrypt(dbpass, password.value);
-        return pass12.toString(CryptoJS.enc.utff8);
-      }
-
-      function login(user){
-          let keepLoggedIn = document.getElementById('customSwitch').checked;
-
-          if(!keepLoggedIn){
-              sessionStorage.setItem('user',JSON.stringify(user) );
-              window.location="./Dashboard/dashboard.html";
-          }
-          else{
-            localStorage.setItem('keepLoggedIn','yes' );
-            localStorage.setItem('user',JSON.stringify(user) );
-            window.location="./Dashboard/dashboard.html";
-          }
-
-      }
-    })
-  
-  
-      </script>
-</body>
-</html>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firestone.js"></script>
+    <script src="./scripts/login.js"></script>
+    <script src="./scripts/index.js"></script>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/e836a072b8.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>blog</title>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin">
+            <img class="admin__image" src="../assets/luc.jpeg" alt="admin" width="40px" height="40px">
+            <span class="admin__name">Admin</span>
+        </div>
+    </header>
+    <div class="wrapper">
+        <nav class="left-nav w1">
+            <h1 class="nav__title">admin Tools</h1>
+            <ul class="nav__list">
+                <li class="nav__item"><i class="fa fa-th nav__icon" aria-hidden="true"></i><a href="index.html">overview</a></li>
+                <li class="nav__item"><i class="fa fa-rss nav__icon" aria-hidden="true"></i><a href="blog.html">blogs</a></li>
+                <li class="nav__item active"><i class="fa fa-comment-o nav__icon" aria-hidden="true"></i><a href="message.html">messages</a></li>
+                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="dash-content w2">
+            <div class="message-cart">
+                <div class="message__header">
+                    <span>sender</span>
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
+                </div>
+                <div class="message__content">
+                    <p>message content</p>
+                    <button class="message__btn">Reply</button>
+                </div>
+            </div>
+            <div class="message-cart">
+                <div class="message__header">
+                    <span>sender</span>
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
+                </div>
+                <div class="message__content">
+                    <p>message content</p>
+                    <button class="message__btn">Reply</button>
+                </div>
+            </div>
+            <div class="message-cart">
+                <div class="message__header">
+                    <span>sender</span>
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
+                </div>
+                <div class="message__content">
+                    <p>message content</p>
+                    <button class="message__btn">Reply</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Reply Message</h2>
+            </div>
+            <div class="modal-body">
+                <form class="blog-form">
+                    <div class="blog__field blog--content">
+                        <textarea name="" placeholder="content" class="blog__content" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="blog__field">
+                        <input type="submit" class="blog__btn" value="Reply">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/message.js"></script>
+</body>
+</html>
