@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="slyle.css" />
+    <title>Sign Up</title>
+   
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+      
+  </head>
+  <body>
+    <section class="login">
+      <div class="sign__title">
+        <span>SIGN UP</span>
+      </div>
+      <form id="signup-form" class="login__form" action="">
+        <div class="login__content">
+          <input
+            id="signup-email"
+            type="email"
+            class="login__email"
+            name="email"
+            placeholder="Email address"
+          />
+        </div>
+        <div class="login__content">
+          <input
+            id="signup-password"
+            type="password"
+            class="login__password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="login__content">
+          <input
+            id="signup-username"
+            type="username"
+            class="login__email"
+            name="username"
+            placeholder="username"
+          />
+        </div>
+        <div class="login__content">
+          <input
+            id="signUp"
+            type="submit"
+            class="login__btn"
+            value="Register"
+          />
+        </div>
+        <div class="Login-but m-t-10 text-center">
+          <p>Already have an account ? <a href="login.html"> login</a></p>
+        </div>
+      </form>
+    </section>
+
+    <script type="module">
+      
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+     
+      const firebaseConfig = {
+        apiKey: "AIzaSyD6R3fMO7O-uedQ-jlBe9OjMCwhmixho30",
+        authDomain: "my-brand-project-63995.firebaseapp.com",
+        databaseURL: "https://my-brand-project-63995-default-rtdb.firebaseio.com",
+        projectId: "my-brand-project-63995",
+        storageBucket: "my-brand-project-63995.appspot.com",
+        messagingSenderId: "345228383712",
+        appId: "1:345228383712:web:764334a990287bc537c785"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      import { getDatabase,ref ,set , child, get} 
+        from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+
+        const db = getDatabase();
+
+        const email = document.getElementById('signup-email');
+      const username = document.getElementById('signup-username');
+      const password = document.getElementById('signup-password');
+
+
+      function isEmptyOrSpaces(str){
+        return str === null || str.match(/^ *$/) !== null;
+      }
+
+
+      function validation(){
+
+let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
+let userregex = /^[a-zA-Z0-9]{5,}$/;
+
+if(isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) || isEmptyOrSpaces(password.value)){
+  alert("All fields must be filled");
+  return false;
+}
+
+if(!emailregex.test(email.value)){
+          alert("You have entered an invalid email address!");
+          return false;
+        }
+        if(!userregex.test(username.value)){
+          alert("-username can only be alphanumeric\n-username must be atleast 5 characters\n-username can not contain spaces");
+          return false;
+        }
+        return true;
+      }
+
+      const signupForm = document.querySelector('#signup-form');
+      signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if(!validation()){  
+          return;
+        }
+        const debRef = ref(db);
+
+        get(child(debRef, "UserList/"+ username.value)).then((snapshot)=>{
+          if(snapshot.exists()){
+            alert("Account Already exists!");
+          }
+          else{
+            set(ref(db, "UserList/"+ username.value),
+            {
+              email: email.value,
+              username: username.value,
+              password: encPass()
+
+            })
+            .then(()=>{
+              alert("User added successfully");
+            })
+            .catch((error)=>{
+              alert("error"+ error);
+
+            })
+          }
+            
+
+          
+        });
+
+      })
+
+
+      function encPass(){
+        var pass12 =  CryptoJS.AES.encrypt(password.value, password.value);
+        return pass12.toString();
+      }
+
+
+
+
+    </script>
+
+  </body>
+ 
+</html>

@@ -45,6 +45,41 @@
             </section>
         </main>
     </div>
+
+
+    <!-- <script>
+
+let  userlink = document.getElementById('userlink');
+let  Signoulink = document.getElementById('Signoulink');
+var  currentuser = null;
+
+
+function getUsername(){
+    let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+}
+
+if(keepLoggedIn == "yes"){
+    currentuser = JSON.parse(localStorage.getItem());
+}
+else{
+    currentuser = JSON.parse(sessionStorage.getItem('user'));
+}
+
+function signout(){
+    sessionStorage.removeItem('user');
+    localStorage.removeItem('user');
+    localStorage.removeItem('keepLoggedIn');
+    window.location = "../login.html";
+}
+
+    window.onload = function(){
+        getUsername();
+        if(currentuser == null){
+            userlink.innerText
+        }
+    }
+
+    </script> -->
 </body>
 </html>
 
