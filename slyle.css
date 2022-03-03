@@ -266,6 +266,15 @@ header .hero-image .photo-bg {
   font-size: 19px;
   color: black;
   }
+
+  .login__content small{
+
+    position: relative;
+    bottom: 0;
+    top: 0;
+    visibility: hidden;
+    color: rgba(255, 0, 0, 0.945);
+  }
   
   
   .login__btn{
@@ -901,4 +910,8 @@ header .hero-image .photo-bg {
 .login__btn {
   font-size: 24px;
 }
+}
+
+.error{
+  color: red;
 }

@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="style.css">
     <title>blog</title>
 </head>
-<body>
+<body onload="readMessage()">
     <header class="admin-header">
         <div class="admin">
-            <img class="admin__image" src="../assets/luc.jpeg" alt="admin" width="40px" height="40px">
+            <img class="admin__image" src="../Assets/M.jpg" alt="admin" width="40px" height="40px">
             <span class="admin__name">Admin</span>
         </div>
     </header>
@@ -23,43 +23,16 @@
                 <li class="nav__item"><i class="fa fa-th nav__icon" aria-hidden="true"></i><a href="index.html">overview</a></li>
                 <li class="nav__item"><i class="fa fa-rss nav__icon" aria-hidden="true"></i><a href="blog.html">blogs</a></li>
                 <li class="nav__item active"><i class="fa fa-comment-o nav__icon" aria-hidden="true"></i><a href="message.html">messages</a></li>
-                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="">Logout</a></li>
+                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="../login.html">Logout</a></li>
             </ul>
         </nav>
         <main class="dash-content w2">
             <div class="message-cart">
-                <div class="message__header">
-                    <span>sender</span>
-                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
-                </div>
-                <div class="message__content">
-                    <p>message content</p>
-                    <button class="message__btn">Reply</button>
-                </div>
-            </div>
-            <div class="message-cart">
-                <div class="message__header">
-                    <span>sender</span>
-                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
-                </div>
-                <div class="message__content">
-                    <p>message content</p>
-                    <button class="message__btn">Reply</button>
-                </div>
-            </div>
-            <div class="message-cart">
-                <div class="message__header">
-                    <span>sender</span>
-                    <div><i class="fa fa-calendar" aria-hidden="true"></i><span>12/03/2020</span></div>
-                </div>
-                <div class="message__content">
-                    <p>message content</p>
-                    <button class="message__btn">Reply</button>
-                </div>
+                
             </div>
         </main>
     </div>
-    <div class="modal">
+    <div class="modal3">
         <div class="modal-content">
             <div class="modal-header">
               <span class="close">&times;</span>
@@ -77,6 +50,11 @@
             </div>
         </div>
     </div>
-    <script src="./scripts/message.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="index.js"></script>
+    <script src="../scripts/config.js"></script>
 </body>
 </html>

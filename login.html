@@ -13,23 +13,31 @@
             <span>Log in</span>
         </div>
         <form class="login__form" id="login-form">
-            <div class="login__content">
+            <div class="login__content login--email">
                 <input type="email" class="login__email" name="email" id="email" placeholder="Email address">
+                <small>Error message</small>
             </div>
-            <div class="login__content">
+            <div class="login__content login--password">
                 <input type="password" class="login__password" name="password" id="password" placeholder="Password">
+                <small>Error message</small>
             </div>
             <div class="login__content">
                 <input type="checkbox" class="login__check" name="keep_logged">
                 <span>Keep me logged in</span>
             </div>
+
             <div class="login__content">
                 <input type="submit" class="login__btn" value="log in">
             </div>
+            <div class="back_home">
+                <a href="index.html"> Back</a></p>
+            </div>
         </form>
     </section>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firestone.js"></script>
-    <script src="./scripts/login.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+      <script src="scripts/login.js"></script>
+      <script src="scripts/index.js"></script>
+      <script src="scripts/config.js"></script>

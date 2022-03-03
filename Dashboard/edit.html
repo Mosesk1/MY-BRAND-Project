@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/e836a072b8.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>blog</title>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin">
+            <img class="admin__image" src="../Assets/M.jpg" alt="admin" width="40px" height="40px">
+            <span class="admin__name">Admin</span>
+        </div>
+    </header>
+    <div class="wrapper">
+        <nav class="left-nav w1">
+            <h1 class="nav__title">admin Tools</h1>
+            <ul class="nav__list">
+                <li class="nav__item"><i class="fa fa-th nav__icon" aria-hidden="true"></i><a href="index.html">overview</a></li>
+                <li class="nav__item active"><i class="fa fa-rss nav__icon" aria-hidden="true"></i><a href="blog.html">blogs</a></li>
+                <li class="nav__item"><i class="fa fa-comment-o nav__icon" aria-hidden="true"></i><a href="message.html">messages</a></li>
+                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="../login.html">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="dash-content w2">
+            <div class="modal1">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h2>Update Blog</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="blog-form blog--edit" id="edit-blog">
+                            <div class="blog__field blog--title">
+                                <input type="text" class="blog__title" id="title" placeholder="title">
+                            </div>
+                            <div class="blog__field blog--summary">
+                                <input type="text" class="blog__summary" id="summary" placeholder="summary">
+                            </div>
+                            <div class="blog__field blog--image">
+                                <input type="file" class="blog__img" id="file">
+                            </div>
+                            <div class="blog__field blog--content">
+                                <textarea name="" placeholder="content" class="blog__content" id="subject" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="blog__field">
+                                <input type="submit" class="blog__btn" value="update">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="index.js"></script>
+    <script src="../scripts/config.js"></script>
+</body>
+</html>

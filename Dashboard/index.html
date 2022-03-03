@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/e836a072b8.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>overview</title>
 </head>
 <body>
     <header class="admin-header">
         <div class="admin">
-            <img class="admin__image" src="../assets/luc.jpeg" alt="admin" width="40px" height="40px">
+            <img class="admin__image" src="../Assets/M.jpg" alt="admin" width="40px" height="40px">
             <span class="admin__name">Admin</span>
         </div>
     </header>
@@ -22,7 +22,7 @@
                 <li class="nav__item active"><i class="fa fa-th nav__icon" aria-hidden="true"></i><a href="index.html">overview</a></li>
                 <li class="nav__item"><i class="fa fa-rss nav__icon" aria-hidden="true"></i><a href="blog.html">blogs</a></li>
                 <li class="nav__item"><i class="fa fa-comment-o nav__icon" aria-hidden="true"></i><a href="message.html">messages</a></li>
-                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="">Logout</a></li>
+                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="../login.html">Logout</a></li>
             </ul>
         </nav>
         <main class="dash-content w2">
@@ -42,5 +42,11 @@
             </section>
         </main>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="index.js"></script>
+    <script src="../scripts/config.js"></script>
 </body>
 </html>
