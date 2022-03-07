@@ -54,27 +54,27 @@
         <div class="modal-content">
             <div class="modal-header">
               <span class="close">&times;</span>
-              <h2>update Blog</h2>
+              <h2>Update Blog</h2>
             </div>
             <div class="modal-body">
-                <form class="blog-form blog--edit" id="add-blog">
+                <form class="blog-form blog--add" id="edit-blog">
                     <div class="blog__field blog--title">
-                        <input type="text" class="blog__id" id="id" placeholder="id">
+                        <input type="text" class="blog__title" style="display: block;" id="eid" placeholder="title">
                     </div>
                     <div class="blog__field blog--title">
-                        <input type="text" class="blog__title" id="title" placeholder="title">
+                        <input type="text" class="blog__title" id="etitle" placeholder="title">
                     </div>
                     <div class="blog__field blog--summary">
-                        <input type="text" class="blog__summary" id="summary" placeholder="summary">
+                        <input type="text" class="blog__summary" id="esummary" placeholder="summary">
                     </div>
                     <div class="blog__field blog--image">
-                        <input type="file" class="blog__img" id="file">
+                        <input type="file" class="blog__img" id="efile">
                     </div>
                     <div class="blog__field blog--content">
-                        <textarea name="" placeholder="content" class="blog__content" id="subject" cols="30" rows="10"></textarea>
+                        <textarea name="" placeholder="content" class="blog__content" id="esubject" cols="30" rows="10"></textarea>
                     </div>
                     <div class="blog__field">
-                        <button class="blog__btn" style="background-color: rgb(18, 233, 143); color: black;" id="update" onclick="updateBlog()">update</button>
+                        <input type="submit" class="blog__btn" id="update" onclick="updateBlog()" value="update">
                     </div>
                 </form>
             </div>
