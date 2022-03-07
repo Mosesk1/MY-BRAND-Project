@@ -63,44 +63,12 @@ var dat = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             });
             readBlog();
         } else {
+            console.log("logout");
             window.location.replace('../index.html');
           }
         });
         })
-        
-        
-        function readMessage(){
-        
-        
-            var msg=firebase.database().ref("Contact/");
-            msg.on("child_added",function(data){
-                var msgValue=data.val();
-            document.querySelector('.dash-content').innerHTML+=`
-                            <div class="message-cart">
-                                <div class="message__header">
-                                   <div class="name-row">
-                                    <h4>Name</h4>
-                                    <span>${msgValue.name}</span>
-                                   </div> 
-                                    <div class="date-row">
-                                    <h4> </h4>
-                                    <div class="left">
-        
-                                        <i class="fa fa-calendar" aria-hidden="true"></i><span>${msgValue.date}</span>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="message__content">
-                                <div class="name-row">
-                                <h5>Subject</h5>
-                                <p>${msgValue.subject}</p>
-                                </div>
-                                    <button class="message__btn">Read</button>
-                                </div>
-                            </div>
-                        `
-                    })     
-        }
+
         function DeleteBlog(id)
         {
             var blog=firebase.database().ref("Blogs/"+id);
@@ -114,8 +82,18 @@ var dat = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         document.getElementById("update").addEventListener("click",(e)=>{
             e.preventDefault();
         });
+        function editBlog(id, title, summary, subject, link){
+
+            document.querySelector('.modal1').style.display="block";
+        
+            document.getElementById("etitle").value=title;
+            document.getElementById("esummary").value=summary;
+            document.getElementById("esubject").value=subject;
+            document.getElementById("eid").value=id;
+            document.getElementById("efile").files[0]=link;
+        }
         function updateBlog(id,title,summary,subject,link){
-            
+            console.log(id);
             var id=document.getElementById("eid").value;
             var title=document.getElementById("etitle").value;
             var summary=document.getElementById("esummary").value;
@@ -132,6 +110,33 @@ var dat = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
            location.reload();
         }
 
+        
+        
+        
+        
+        function getcount(){
+            firebase.database().ref('Blogs').on("value",function(snapshot) {
+                var counting= snapshot.numChildren();
+                document.getElementById("summary1").innerHTML+=`
+                        <div class="summary__item">
+                        <i class="fa fa-rss blog fa-lg" aria-hidden="true"></i>
+                        <div class="summary__title"><span>blogs</span></div>
+                        <div class="blog__value"><span>${counting}</span></div>
+                    </div>
+                            `
+            });
+            firebase.database().ref('Contact').on("value",function(snapshot) {
+                var countin= snapshot.numChildren();
+                document.getElementById("summary").innerHTML+=`
+                        <div class="summary__item">
+                        <i class="fa fa-comment-o message fa-10x" aria-hidden="true"></i>
+                        <div class="summary__title"><span>messages</span></div>
+                        <div class="blog__value"><span>${countin}</span></div>
+                    </div>
+                            `
+            })
+        
+        }
         const logoutBtn = document.querySelector('#logout-btn');
         logoutBtn.addEventListener('click', e => {
           e.preventDefault();
@@ -139,16 +144,3 @@ var dat = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
           console.log('User signed out!');
           window.location.replace('../index.html');
         })
-        
-        function editBlog(id, title, summary, subject, link){
-
-            document.querySelector('.modal1').style.display="block";
-        
-            document.getElementById("etitle").value=title;
-            document.getElementById("esummary").value=summary;
-            document.getElementById("esubject").value=subject;
-            document.getElementById("eid").value=id;
-            document.getElementById("efile").files[0]=link;
-        }
-        
-        

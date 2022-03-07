@@ -22,7 +22,10 @@
                 <li class="nav__item"><i class="fa fa-th nav__icon" aria-hidden="true"></i><a href="index.html">overview</a></li>
                 <li class="nav__item active"><i class="fa fa-rss nav__icon" aria-hidden="true"></i><a href="blog.html">blogs</a></li>
                 <li class="nav__item"><i class="fa fa-comment-o nav__icon" aria-hidden="true"></i><a href="message.html">messages</a></li>
-                <li class="nav__item down"><i class="fa fa-sign-out nav__icon" aria-hidden="true"></i><a href="../login.html">Logout</a></li>
+                <<li class="nav__item down">
+                    <i class="fa fa-sign-out nav__icon" aria-hidden="true"></i>
+                        <button class="signout" id="logout-btn">Logout</button>
+                </li>
             </ul>
         </nav>
         <main class="dash-content w2">
@@ -34,7 +37,7 @@
                     <div class="modal-body">
                         <form class="blog-form blog--edit" id="add-blog">
                             <div class="blog__field blog--title">
-                                <input type="text" class="blog__title" id="title" placeholder="title">
+                                <input type="text" class="blog__title" style="display: none;" id="title" placeholder="title">
                             </div>
                             <div class="blog__field blog--summary">
                                 <input type="text" class="blog__summary" id="summary" placeholder="summary">
