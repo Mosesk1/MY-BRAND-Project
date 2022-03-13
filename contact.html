@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Welcome to moses's blog</title>
     <link rel="stylesheet" href="slyle.css">
-    <link rel="stylesheet" href="responsive.css">
   </head>
   <body>
        <div class="nav-container">
@@ -63,16 +62,18 @@
       <span class="underlined">get in touch</span>
       </div>
       <form class="contact__form">
-      <div class="contact__content">
+      <div class="contact__content contact--name">
       <input type="text" class="contact__name" name="name" placeholder="name">
       </div>
-      <div class="contact__content">
+      <div class="contact__content contact--email">
       <input type="email" class="contact__email" name="email" placeholder="email">
       </div>
-      <div class="contact__content">
+
+      
+      <div class="contact__content contact--subject">
       <input type="text" class="contact__subject" name="subject" placeholder="subject">
       </div>
-      <div class="contact__content">
+      <div class="contact__content contact--message">
       <textarea class="contact__message" name="message" placeholder="message" rows="4" cols="50"></textarea>
       </div>
       <div class="contact__content">
@@ -99,6 +100,12 @@
         <a href="" class="social__link"><img src="Assets/Github Icon undefined.png" alt="" class="social__img"></a>
       </div>
       </footer>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+      <script src="scripts/contact.js"></script>
+      <script src="scripts/config.js"></script>
       
       </body>
       </html>

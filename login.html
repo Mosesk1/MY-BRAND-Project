@@ -12,31 +12,32 @@
         <div class="login__title">
             <span>Log in</span>
         </div>
-        <form class="login__form" action="./Dashboard/dashboard.html">
-            <div class="login__content">
-                <input type="email" class="login__email" name="email" placeholder="Email address">
+        <form class="login__form" id="login-form">
+            <div class="login__content login--email">
+                <input type="email" class="login__email" name="email" id="email" placeholder="Email address">
+                <small>Error message</small>
             </div>
-            <div class="login__content">
-                <input type="password" class="login__password" name="password" placeholder="Password">
+            <div class="login__content login--password">
+                <input type="password" class="login__password" name="password" id="password" placeholder="Password">
+                <small>Error message</small>
             </div>
             <div class="login__content">
                 <input type="checkbox" class="login__check" name="keep_logged">
                 <span>Keep me logged in</span>
             </div>
+
             <div class="login__content">
                 <input type="submit" class="login__btn" value="log in">
-            </div>
-            <div class="register-link m-t-10 text-center">
-                <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
             </div>
             <div class="back_home">
                 <a href="index.html"> Back</a></p>
             </div>
         </form>
     </section>
-</body>
-</html>
-
-
-
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+      <script src="scripts/login.js"></script>
+      <script src="scripts/index.js"></script>
+      <script src="scripts/config.js"></script>

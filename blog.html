@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="slyle.css">
    
   </head>
-  <body>
+  <body onload="readBlog()">
     
     <div class="nav-container">
       <div class="wrapper">
@@ -57,37 +57,11 @@
     </div>
 
     <main class="container">
-      <article class="card">
-          <div class="card__image">
-              <img src="Assets/M.jpg" alt="">
-          </div>
-          <div class="card__content">
-              <h1 class="card__title">What does DSL Mean on Facebook</h1>
-              <p class="card__description">The popularity of online social networks has increased a lot and the attraction of FaceBook has attracted almost everyone. The craziness ha...</p>
-              <button class="card--more">READ MORE</button>
-          </div>
-      </article>
-      <article class="card">
-          <div class="card__image">
-              <img src="Assets/balling.jpg" alt="">
-          </div>
-          <div class="card__content">
-              <h1 class="card__title">What does DSL Mean on Facebook</h1>
-              <p class="card__description">The popularity of online social networks has increased a lot and the attraction of FaceBook has attracted almost everyone. The craziness ha...</p>
-              <button class="card--more">READ MORE</button>
-          </div>
-      </article>
-      <article class="card">
-          <div class="card__image">
-              <img src="Assets/balling.jpg" alt="">
-          </div>
-          <div class="card__content">
-              <h1 class="card__title">What does DSL Mean on Facebook</h1>
-              <p class="card__description">The popularity of online social networks has increased a lot and the attraction of FaceBook has attracted almost everyone. The craziness ha...</p>
-              <button class="card--more">READ MORE</button>
-          </div>
-      </article>
-  </main>
+      
+    </main>
+    <main class="container1">
+      
+    </main>
     <footer>
       <div class="footer__title">
       <span>let’s stay in touch</span>
@@ -106,8 +80,11 @@
       <a href="" class="social__link"><img src="Assets/Github Icon undefined.png" alt="" class="social__img"></a>
       </div>
       </footer>
-      </body>
-      </html>
-    <script src="main.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="scripts/overview.js"></script>
+    <script src="scripts/config.js"></script>
   </body>
 </html>

@@ -174,6 +174,19 @@ header .hero-image .photo-bg {
   position: absolute;
 }
 
+.checkbtn{
+  font-size: 30px;
+  color: black;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
 /* //////////////////// */
 
 .login{
@@ -190,6 +203,14 @@ header .hero-image .photo-bg {
   position: absolute;
   top: 18%;
   left: 40%;
+  font-family: Roboto;
+  font-size: 48px;
+  color:#018471
+  }
+  .sign__title{
+  position: absolute;
+  top: 18%;
+  left: 35%;
   font-family: Roboto;
   font-size: 48px;
   color:#018471
@@ -231,6 +252,9 @@ header .hero-image .photo-bg {
     text-decoration: none;
     color: #018471;
   }
+  .Login-but{
+    margin: 10px;
+  }
   
   
   .login__email, .login__password{
@@ -241,6 +265,15 @@ header .hero-image .photo-bg {
   font-family: Roboto;
   font-size: 19px;
   color: black;
+  }
+
+  .login__content small{
+
+    position: relative;
+    bottom: 0;
+    top: 0;
+    visibility: hidden;
+    color: rgba(255, 0, 0, 0.945);
   }
   
   
@@ -467,7 +500,7 @@ header .hero-image .photo-bg {
   font-family: salsa;
   display: inline-block;
   width: 25%;
-  font-size: 20px;
+  font-size: 15px;
   }
   
   
@@ -701,7 +734,7 @@ header .hero-image .photo-bg {
    @media only screen and (max-width: 375px) {
     
     nav{
-      width: 60%;
+      width: 100%;
     }
 
     nav .logo{
@@ -785,4 +818,100 @@ header .hero-image .photo-bg {
      width: 100%;
    }
   
+}
+
+@media only screen and (max-width: 768px) {
+
+  * {
+    font-size: 18px;
+  }
+  nav .logo {
+    font-size: 24px;
+  }
+  nav ul {
+    display: none;
+}
+
+.header-container {
+  height: auto;
+  margin-top: 30px;
+}
+
+.hero-content {
+  margin-left: 3%;
+}
+header {
+  width: 97%;
+}
+header a {
+  font-size: 24px;}
+header h1 {
+  font-size: 18px;
+}
+header p {
+  margin-bottom: 20px;
+}
+
+header .hero-image .photo-bg {
+  left: 0px;
+  top: 35px;
+}
+header .hero-image img {
+  margin-left: 0%;
+  width: 100%;
+}
+header .hero-image .photo-bg {
+  left: 0px;
+  top: 35px;
+  width: 100%;
+  height: 80%;
+}
+.intro__description {
+  padding: 0px;
+  font-size: 18px;
+  width: 96%;
+}
+.stack {
+  display: contents;
+}
+.stack__designer {
+   border-right: none;
+}
+.footer__form {
+  width: 100%;
+  margin-top: 0px;
+  padding: 10px;
+}
+.footer__email {
+  padding: 10px;
+  margin-right: 0px;
+  width: 100%;
+  font-size: 14px;
+}
+.footer__btn {
+  width: 100%;
+  font-size: 14px;
+}
+
+.social__link > img {
+  width: 30px;
+  height: 30px;
+}
+
+
+.login {
+  width: 100%;
+  height: 370px;
+}
+
+.login__title {
+    top: 0%;
+}
+.login__btn {
+  font-size: 24px;
+}
+}
+
+.error{
+  color: red;
 }
